@@ -7,10 +7,12 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireStorageModule } from 'angularfire2/storage';
-import { LayoutComponent } from './layout/layout.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
-import { MainComponent } from './layout/main/main.component';
+import { LayoutComponent } from './core/layout/layout.component';
+import { HeaderComponent } from './core/layout/header/header.component';
+import { FooterComponent } from './core/layout/footer/footer.component';
+import { MainComponent } from './core/pages/main/main.component';
+import { AppRoutingModule } from './app-routing.module';
+import { AdminComponent } from './core/pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { MainComponent } from './layout/main/main.component';
     LayoutComponent,
     HeaderComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -27,8 +30,7 @@ import { MainComponent } from './layout/main/main.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-
-
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
