@@ -13,6 +13,7 @@ import { FooterComponent } from './core/layout/footer/footer.component';
 import { MainComponent } from './core/pages/main/main.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminComponent } from './core/pages/admin/admin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { AdminComponent } from './core/pages/admin/admin.component';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
-    AppRoutingModule
+
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

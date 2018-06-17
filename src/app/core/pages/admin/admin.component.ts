@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiInstagramService } from '../../services/api-instagram.service';
+import { Account } from '../../models/account';
 
 @Component({
   selector: 'app-admin',
@@ -6,10 +8,30 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  account: Account;
 
-  constructor() { }
+  constructor(
+    private apiInstagram: ApiInstagramService
+  ) { }
 
   ngOnInit() {
+    this.apiInstagram.getPlaceByUsername('centralcoffeekh').subscribe(data => {
+      console.log(data);
+      console.log(data.business_discovery.media);
+      this.account = data.business_discovery;
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  onSearch(username: string) {
+    this.apiInstagram.getPlaceByUsername(username).subscribe(data => {
+      console.log(data);
+      console.log(data.business_discovery.media);
+      this.account = data.business_discovery;
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

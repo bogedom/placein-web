@@ -1,3 +1,10 @@
-<p>
-  admin works!
-</p>
+<input #username (keyup.enter)="onSearch(username.value)">
+<div *ngIf="account">
+  <p>{{account.username}}</p>
+  <p>{{account.media_count}}</p>
+  <p>{{account.followers_count}}</p>
+  <p>{{account.biography}}</p>
+  <p>{{account.email}}</p>
+  <p>{{account.name}}</p>
+  <img src="{{account.profile_picture_url}}" alt="">
+</div>
