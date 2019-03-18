@@ -1,26 +1,21 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
-import { environment } from '../environments/environment';
-import { LayoutComponent } from './core/layout/layout.component';
-import { HeaderComponent } from './core/layout/header/header.component';
-import { FooterComponent } from './core/layout/footer/footer.component';
-import { MainComponent } from './core/pages/main/main.component';
-import { AppRoutingModule } from './app-routing.module';
-import { AdminComponent } from './core/pages/admin/admin.component';
-import { HttpClientModule } from '@angular/common/http';
+import {AppComponent} from './app.component';
+import {environment} from '../environments/environment';
+import {MainComponent} from './pages/main/main.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AdminComponent} from './pages/admin/admin.component';
+import {HttpClientModule} from '@angular/common/http';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireStorageModule} from '@angular/fire/storage';
+import {LayoutModule} from './shared/modules/layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
-    HeaderComponent,
-    FooterComponent,
     MainComponent,
     AdminComponent
   ],
@@ -33,7 +28,10 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
     AngularFireStorageModule,
 
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+
+    // Shared modules
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

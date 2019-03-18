@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiInstagramService } from '../../services/api-instagram.service';
-import { Account } from '../../models/account';
+import { ApiInstagramService } from '../../core/api/api-instagram.service';
+import { Account } from '../../core/models/account';
 
 @Component({
   selector: 'app-admin',
