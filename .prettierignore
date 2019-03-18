@@ -1,0 +1,9 @@
+.git
+.idea
+tslint.json
+tsconfig.json
+package.json
+package-lock.json
+dist
+
+src/assets/i18n/*.json

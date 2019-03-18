@@ -7,7 +7,19 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "------------------ common ------------------": "",
+    "lint-scss": "sass-lint --config .sass-lint.yml --verbose --no-exit",
+    "lint-scss-fix": "sass-lint-auto-fix --config .sass-lint-auto-fix.yml",
+    "format": "prettier --write \"**/*.{js,ts,json}\"",
+    "------------------ hooks ------------------": "",
+    "precommit": "lint-staged && npm run lint-scss && npm run lint"
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "private": true,
   "dependencies": {
@@ -31,7 +43,10 @@
     "jquery": "^3.3.1",
     "npm": "^6.9.0",
     "popper.js": "^1.14.7",
+    "prettier": "^1.16.4",
     "rxjs": "^6.4.0",
+    "sass-lint": "^1.12.1",
+    "sass-lint-auto-fix": "^0.16.1",
     "yarn-upgrade-all": "^0.5.0",
     "zone.js": "^0.8.29"
   },
